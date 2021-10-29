@@ -1,1 +1,1 @@
-# coding-project-template
+# Marvin Teh's final assignment for "Introduction to Web Development with HTML, CSS, JavaScript" from Coursera

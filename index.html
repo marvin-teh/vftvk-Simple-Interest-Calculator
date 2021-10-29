@@ -1,16 +1,71 @@
+<!DOCTYPE html>
 <html>
     <head>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+      <script src="script.js"></script>
+      <link rel="stylesheet" href="style.css">
+      <title>Simple Interest Calculator</title>
     </head>
+
     <body>
+      <div class="main_div">
         <h1>Simple Interest Calculator</h1>
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
+        <!-- creating another div to better center the forms inside "main_div" -->
+        <div id="form_div">
+          <form>
+            <div>
+              <label for:"principal">Amount</label>
+              <input type="number" id="principal" />
+            </div>
+            <div>
+              <label for:"rate">Interest Rate</label>
+              <input type="range" id="rate" min="1.0" max="20.0" step="0.25" value="10.25"
+                    oninput="update_rate()" />
+              <span id="current-rate">10.25%</span>
+            </div>
+            <div>
+              <label for:"time">No. of Years</label>
+              <select id="time"> <!-- added up to 15 years instead -->
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3 selected>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+                <option value=6>6</option>
+                <option value=7>7</option>
+                <option value=8>8</option>
+                <option value=9>9</option>
+                <option value=10>10</option>
+                <option value=11>11</option>
+                <option value=12>12</option>
+                <option value=13>13</option>
+                <option value=14>14</option>
+                <option value=15>15</option>
+              </select>
+            </div>
+            <div>
+              <input type="button" onclick="compute()" value="Compute Interest"></input>
+            </div>
+          </form>
 
-        <button onclick="compute()">Compute</button>
+          <!-- creating a results section without using <span> -->
+          <div class=div_text_results>
+              <p id="p_text"></p> <p class="numeric_results" id="p_result"></p>
+          </div>
+          <div class=div_text_results>
+              <p id="r_text"></p> <p class="numeric_results" id="r_result"></p> <p class="comma" id = "comma0"></p>
+          </div>
+          <div class=div_text_results>
+              <p id="i_text"></p> <p class="numeric_results" id="i_result"></p>
+          </div>
+          <div class=div_text_results>
+              <p id="t_text"></p> <p class="numeric_results" id="t_result"></p>
+          </div>
+
+        </div><!-- end "form_div" -->
+
+
+        <footer id="copyright">&#169; Everyone Can Get Rich</footer>
+      </div><!-- end "main_div" -->
     </body>
 </html>
